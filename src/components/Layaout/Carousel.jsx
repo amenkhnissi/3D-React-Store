@@ -25,17 +25,17 @@ export  const SocialNav = () =>{
   const Nav = [
     {
       title : "facebook",
-      icon  :  <i class='bx bxl-facebook-square bx-md' ></i>,
+      icon  :  <i className='bx bxl-facebook-square bx-md' ></i>,
       link  : "https://www.facebook.com" 
     },
     {
       title : "instagram",
-      icon  : <i class='bx bxl-instagram-alt bx-md' ></i>,
+      icon  : <i className='bx bxl-instagram-alt bx-md' ></i>,
       link  : "https://www.instagram.com" 
     },
     {
       title : "twitter",
-      icon  :  <i class='bx bxl-twitter bx-md' ></i>,
+      icon  :  <i className='bx bxl-twitter bx-md' ></i>,
       link  : "https://www.twitter.com" 
     },
   ]
@@ -56,7 +56,7 @@ export  const SocialNav = () =>{
 const Carousel = ({features}) => {
 
    // Vanilla transition effect
-   let slideCard = document.querySelectorAll('.slide-card')
+   let slideCard = document.querySelectorAll('.shop-now')
    slideCard.forEach(slide =>
     VanillaTilt.init(slide, {
       max: 20,

@@ -1,128 +1,100 @@
-import React , { useEffect, useRef } from 'react'
-import { SocialNav } from '../Layaout/Carousel'
+import React from 'react'
+import {  useParams } from 'react-router-dom';
+
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Link, useParams } from 'react-router-dom';
-import {gsap } from 'gsap';
 
 // Import Swiper styles
 import "swiper/swiper.min.css";
-import "swiper/components/effect-cube/effect-cube.min.css"
 import "swiper/components/pagination/pagination.min.css"
+import "swiper/components/navigation/navigation.min.css"
 
 
 
 // import Swiper core and required modules
 import SwiperCore, {
-  EffectCube,Pagination , Autoplay
-} from 'swiper';
+  Mousewheel,Pagination , Navigation
+} from 'swiper/core';
+
 
 // install Swiper modules
-SwiperCore.use([EffectCube,Pagination, Autoplay]);
+SwiperCore.use([Mousewheel,Pagination,Navigation]);
+
+
+
+
+
+
 
 
 
 const Product = ({product,addtocart}) => {
 
-  const logoTab = ["akstore"]
-  const logo = useRef()
   const {id} = useParams()
     
-    const GsapAnimtions =  () => {
+    console.log(product)
 
-       gsap.fromTo(logo.current ,{
-        autoAlpha : 0
-      },{
-        autoAlpha : 1 ,
-      duration : 5,
-        
-      }) 
-
-    }
-
-    useEffect(()=>{
-      GsapAnimtions()
-
-    },[])
    
 
-    return  ( <div className="single-product">
-        
-        <SocialNav />
-       
-         <div className="back-home">
-        <Link to="/">
-       
-        <i class='bx bx-arrow-back bx-fade-right bx-lg' ></i>
-      
-        </Link>
+    return !product ? <h1>loading</h1>: (
+      <section  className="product"  >
+        <div className="contaiter-fluid h-50 ">
+          <div className="row">
+            <div className="col-md-6 ">
+            <Swiper direction={'vertical'} slidesPerView={1} spaceBetween={30} mousewheel={true} pagination={{
+        "clickable": true
+      }}   className="mySwiper">
+        {product.map(product =>  product.id === id &&  (
+            product.assets.map(img => 
+              <SwiperSlide  key={img.id}><img src={img.url} />
+              </SwiperSlide>  
+              )
+         
+        ))}
+    
+        </Swiper> 
+            </div>
+            <div className="col-md-6  d-flex flex-column justify-content-evenly ">
+            {product.map(product =>  product.id === id &&  (
+              <>
+              <span> SKU : {product.sku} </span>
+              <h1> {product.name} </h1>
+              <p  dangerouslySetInnerHTML={{__html: product.description}}  ></p>
+              <span>{product.price.formatted_with_symbol} </span>
+              <div  className="product-add-cart" onClick={ ()=> addtocart(product.id,1)   } >Add To Cart</div>
+              <img className="logo" src="/images/pay-pal.png" alt="paypal" />
+              </>
+        ))}
+            </div>
+          </div>
         </div>
-       
-       
-        <div className="left"></div>
-        <div className="right"></div>
+        <div className="container-fluid h-50 related-product " >
+          <div className="row  ">
+            <h1 className="d-flex flex-row align-content-center justify-content-center " >You may also like</h1>
+          <Swiper slidesPerView={3} spaceBetween={10} navigation={true} pagination={{
+        "clickable": true
+      }} className="mySwiper">
+        {product.map(product =>  product.id === id &&  (
+            product.related_products.map(product => 
+              <SwiperSlide  key={product.id}>
+               <div className="d-flex flex-column align-items-center justify-content-evenly " style={{height:'550px',width:'300px'}} >
+                <img className="mb-1 "   width="100%" src={product.media.source} alt="related product" />
+                <h4> {product.name} </h4>
+                <span> {product.price.formatted_with_symbol} </span>
+                <div className="related-btn" onClick={()=>  addtocart(product.id,1) } >Add to cart</div>
+               </div>
+              </SwiperSlide>  
+              )
+         
+        ))}
     
-        <div className="strips">
-          <div className="left-strip"></div>
-          <div className="right-strip"></div>
+        </Swiper> 
+          </div>
         </div>
 
-        <div className="logo">
-          <ul ref={logo}>
-          {logoTab.map((e)=> e.split('').map((a,k) => <li key={k} >{ a }</li>  )
-
-           )}
-          </ul>
-          
-           
-        </div>
-    
-       {product.filter(p => p.id === id ).map((p,k) => (
-< div key={k} >
-<div className="size">
-
-  <span>Price : </span>
-  {p.price.formatted_with_symbol}
-
-<i style={{cursor:"pointer"}} class='bx bxs-cart-add bx-tada bx-lg' onClick={() => addtocart(p.id,1)} ></i>
-</div>
-<div className="product-desc">
-  <p  >
-   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, ullam!
-  </p>
-</div>
-<img className="product-img" src={p.media.source} alt="product" />
-
-<div className="product-text">
-<h1 className="product-title">{p.name}</h1>
-</div>
 
 
-<div className="swiper-bottom">
-<Swiper effect={'cube'} grabCursor={true} cubeEffect={{
-"shadow": true,
-"slideShadows": true,
-"shadowOffset": 20,
-"shadowScale": 0.94
-}} pagination={true} autoplay= { { delay : 2000 }  } className="mySwiper">
-  {p.assets.map((img,key)  =>    
-  <SwiperSlide key={key} ><img src={img.url} /></SwiperSlide>
-
-  )}
-</Swiper>
-
-</div>
-</div>
-
-
-       )   )    }
-        
-    
-       
-        
-    
-      </div>
-     
-    
+      </section>
     )
 }
 

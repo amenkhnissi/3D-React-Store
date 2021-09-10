@@ -7,7 +7,7 @@ import {
 
 //Components
 import Carousel from "./components/Layaout/Carousel";
-import Home from "./components/Header/Home";
+import Home, { Arrow } from "./components/Header/Home";
 import Navbar from "./components/Header/Navbar";
 import Products from "./components/Product/Products";
 import { commerce } from "./lib/Commerce";
@@ -18,6 +18,7 @@ import Quotes from "./components/Layaout/Quotes";
 import Video from "./components/Layaout/Video";
 import Features from "./components/Layaout/Features";
 import Brands from "./components/Layaout/Brands";
+import ContactForm from './components/Footer/ContactForm'
 
 
 
@@ -99,6 +100,7 @@ export default function App() {
 
     <Router>
        <div>
+         <Arrow />
       <Navbar totalItems={cart.total_items} />
       <Switch>
 
@@ -110,6 +112,7 @@ export default function App() {
           <Video />
           <Features />
           <Brands />
+          <ContactForm />
          
 
         </>
