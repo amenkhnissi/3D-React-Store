@@ -7,7 +7,7 @@ const Cart = ({cart  , updateCart , removeFromCart , emptyCart}) => {
     if(!cart) return "loading"
     const IsEmpty =() =>
        <div style={{"display" : "grid","placeItems" :"center" , 'color' : 'white' , 'height' : 'calc(100vh - 80px)'}}>
-        <h1 >Your shopping cart is empty ! Go shopping Now <Link to='/' class="fa fa-shopping-bag " style={{"color" : "blue"}} aria-hidden="true">Shop Now</Link></h1>
+        <h1 >Your shopping cart is empty ! Go shopping Now <Link to='/products' class="fa fa-shopping-bag " style={{"color" : "blue"}} aria-hidden="true">Shop Now</Link></h1>
         </div>
    
   
