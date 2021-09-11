@@ -1,5 +1,6 @@
 import React from 'react'
 import Bounce from 'react-reveal/Bounce';
+import {Link as LinkS } from 'react-scroll'
 
 
 const Features = () => {
@@ -11,7 +12,7 @@ const Features = () => {
               <Bounce left >
               <h3>New Collection</h3>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, consectetur.</p>
-                <button className="btn btn-dark" >Find Out more</button>
+               <linkS to='/products' <button className="btn btn-dark" >Find Out more</button></LinkS>
               </Bounce>
               
              </div>
