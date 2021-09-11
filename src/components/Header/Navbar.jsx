@@ -95,7 +95,7 @@ export default function Navbar({ totalItems }) {
 
                                 </>
                             )
-                            : (<li className="nav-item"  ><Link to="/" ><i className='bx bx-shopping-bag bx-sm'></i><span className="badge" style={{ 'backgroundColor': 'red' }}>{totalItems}</span></Link></li>
+                            : (<li className="nav-item"  ><Link to="/cart" ><i className='bx bx-shopping-bag bx-sm'></i><span className="badge" style={{ 'backgroundColor': 'red' }}>{totalItems}</span></Link></li>
 
                             )
 
