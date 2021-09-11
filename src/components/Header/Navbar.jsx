@@ -26,11 +26,9 @@ export default function Navbar({ totalItems }) {
             <nav className="navbar  navbar-expand-lg " >
                 <div className="container-fluid fixed-top py-4">
                     <a href="#home" className="navbar-brand  text-uppercase font-weight-bold mr-2"><i className='bx bx-headphone bx-spin' ></i>
-                        {location.pathname === "/cart" ?
                             <Link to="/" className="navbar-brand" ><b>AK Store</b></Link>
-                            : <a href="#home" className="navbar-brand" ><b>AK Store</b></a>
 
-                        }
+                        
                     </a>
 
 
