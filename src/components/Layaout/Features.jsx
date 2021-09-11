@@ -12,7 +12,7 @@ const Features = () => {
               <Bounce left >
               <h3>New Collection</h3>
               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil, consectetur.</p>
-               <linkS to='/products'> <button className="btn btn-dark" >Find Out more</button></LinkS>
+               <LinkS to='/products'> <button className="btn btn-dark" >Find Out more</button></LinkS>
               </Bounce>
               
              </div>
