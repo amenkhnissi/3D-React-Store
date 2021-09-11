@@ -89,8 +89,7 @@ export default function Navbar({ totalItems }) {
                         {location.pathname === "/" ?
                             (
                                 <>
-                                    <li className="nav-item" > <i className='bx bx-user bx-sm '></i></li>
-                                    <li className="nav-item" > <i className='bx bx-search bx-sm  '></i></li>
+                                   
                                     <li className="nav-item"  ><Link to="/cart" ><i className='bx bx-shopping-bag bx-sm'></i><span className="badge" style={{ 'backgroundColor': 'red' }}>{totalItems}</span></Link></li>
 
                                 </>
