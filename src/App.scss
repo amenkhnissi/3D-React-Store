@@ -154,7 +154,11 @@ body,
   justify-content: space-between;
   align-items: flex-end;
   z-index: 1500;
+<<<<<<< HEAD
   transform: translateX(35px);
+=======
+  transform: translateX(40px);
+>>>>>>> 36eccb6a3273468417b843f2f79209b561cff984
   transition: 1.5s;
   a {
     color: var(--secondary);
@@ -167,15 +171,28 @@ body,
   }
 
   &:hover {
+<<<<<<< HEAD
     a:nth-child(1) {
+=======
+    
+    a:nth-child(1){
+>>>>>>> 36eccb6a3273468417b843f2f79209b561cff984
       transform: translateX(-30px);
       transition: 1s;
     }
+<<<<<<< HEAD
     a:nth-child(2) {
+=======
+    a:nth-child(2){
+>>>>>>> 36eccb6a3273468417b843f2f79209b561cff984
       transform: translateX(-30px);
       transition: 1.5s;
     }
+<<<<<<< HEAD
     a:nth-child(3) {
+=======
+    a:nth-child(3){
+>>>>>>> 36eccb6a3273468417b843f2f79209b561cff984
       transform: translateX(-30px);
       transition: 2s;
     }
@@ -618,6 +635,7 @@ textarea.form-control {
   padding: 10px 0;
   display: none;
   font-size: 16px;
+<<<<<<< HEAD
   font-weight: 500;
 }
 
@@ -632,3 +650,18 @@ textarea.form-control {
   background-color: rgba(0, 0, 0, 0.603);
   cursor: pointer;
 }
+=======
+  font-weight: 500; }
+
+  .scroll-btn {  
+    padding-top: 2rem;
+   position: fixed;
+    color: #ffffff;
+    right: 80px !important;
+    bottom: 10px;
+    z-index: 1000;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.603);
+    cursor: pointer;
+  }
+>>>>>>> 36eccb6a3273468417b843f2f79209b561cff984

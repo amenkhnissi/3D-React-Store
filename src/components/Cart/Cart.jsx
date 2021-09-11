@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
+<<<<<<< HEAD
 const Cart = ({ cart, updateCart, removeFromCart, emptyCart }) => {
   if (!cart.line_items) return "loading";
   if (!cart) return "loading";
@@ -27,6 +28,20 @@ const Cart = ({ cart, updateCart, removeFromCart, emptyCart }) => {
       </h1>
     </div>
   );
+=======
+const Cart = ({cart  , updateCart , removeFromCart , emptyCart}) => {
+    if(!cart.line_items) return "loading"
+    if(!cart) return "loading"
+    const IsEmpty =() =>
+       <div style={{"display" : "grid","placeItems" :"center" , 'color' : 'white' , 'height' : 'calc(100vh - 80px)'}}>
+        <h1 >Your shopping cart is empty ! Go shopping Now <Link to='/products' class="fa fa-shopping-bag " style={{"color" : "blue"}} aria-hidden="true">Shop Now</Link></h1>
+        </div>
+   
+  
+    return (
+        <section class="h-100 gradient-custom">
+          { cart.total_items !== 0 ? (
+>>>>>>> 36eccb6a3273468417b843f2f79209b561cff984
 
   return (
     <section class="h-100 gradient-custom mt-5">

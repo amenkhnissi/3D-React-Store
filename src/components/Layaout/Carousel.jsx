@@ -85,10 +85,24 @@ const Carousel = ({ features }) => {
           <div className="shop-now">
             <h2>Shop now</h2>
           </div>
+<<<<<<< HEAD
         </Link>
       </div>
     </>
   );
 };
+=======
+          </SwiperSlide>
+        ))}
+    
+        </Swiper> 
+        
+       <Link to="/products" className="bold"><div className="shop-now">Shop now</div></Link>
+    </div> 
+
+     </>
+    
+}
+>>>>>>> 36eccb6a3273468417b843f2f79209b561cff984
 
 export default Carousel;
