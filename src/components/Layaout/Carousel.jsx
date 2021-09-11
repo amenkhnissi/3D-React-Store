@@ -86,7 +86,7 @@ const Carousel = ({features}) => {
     
         </Swiper> 
         
-        <div className="shop-now"><Link to="/products" className="bold">Shop now</Link></div>
+       <Link to="/products" className="bold"><div className="shop-now">Shop now</div></Link>
     </div> 
 
      </>
