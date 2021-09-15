@@ -1,5 +1,5 @@
-import React from 'react'
-import {  useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import {  Link, useParams } from 'react-router-dom';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -32,11 +32,13 @@ const Product = ({product,addtocart}) => {
 
   const {id} = useParams()
     
-    console.log(product)
+     const [Loading,SetLoading] = useState(true)
+   useEffect(() =>{
+setInterval(()=> SetLoading(false),2000 )
 
-   
+   })
 
-    return !product ? <h1>loading</h1>: (
+    return  (
       <section  className="product"  >
         <div className="contaiter-fluid h-50 ">
           <div className="row">
@@ -71,14 +73,16 @@ const Product = ({product,addtocart}) => {
         <div className="container-fluid h-50 related-product " >
           <div className="row  ">
             <h1 className="d-flex flex-row align-content-center justify-content-center " >You may also like</h1>
-          <Swiper slidesPerView={3} spaceBetween={10} navigation={true} pagination={{
+          <Swiper slidesPerView={4} spaceBetween={10} navigation={true} pagination={{
         "clickable": true
       }} className="mySwiper">
         {product.map(product =>  product.id === id &&  (
             product.related_products.map(product => 
               <SwiperSlide  key={product.id}>
                <div className="d-flex flex-column align-items-center justify-content-evenly " style={{height:'550px',width:'300px'}} >
-                <img className="mb-1 "   width="100%" src={product.media.source} alt="related product" />
+               <Link to={`/product/${product.id}/${product.name}`} >
+                <img className="mb-1 "   width="100%" src={product.media.source} alt="related product" /> 
+                </Link>
                 <h4> {product.name} </h4>
                 <span> {product.price.formatted_with_symbol} </span>
                 <div className="related-btn" onClick={()=>  addtocart(product.id,1) } >Add to cart</div>

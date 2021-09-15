@@ -146,9 +146,10 @@ const Cart = ({cart  , updateCart , removeFromCart , emptyCart}) => {
           </li>
         </ul>
 
-        <button type="button" class="btn btn-primary btn-lg btn-block">
+      <Link to='/checkout'>  <button type="button" class="btn btn-primary btn-lg btn-block">
           Go to checkout
         </button>
+        </Link>
       </div>
     </div>
   </div>

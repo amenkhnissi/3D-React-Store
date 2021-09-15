@@ -1,4 +1,4 @@
-import React from "react";
+import React  from "react";
 import 'bootstrap/dist/js/bootstrap.bundle.js'
 import { Link, useLocation } from 'react-router-dom'
 import { Link as LinkS }from 'react-scroll'
@@ -21,14 +21,19 @@ export default function Navbar({ totalItems }) {
 
 
         <section className="nav-wrapper" >
-            <div className=" discount "><span>OUR ONLINE STORE IS OPEN IN LEVEL 4. ORDERS WILL BEGIN SHIPPING IN LEVEL 3. NZ FREE SHIPPING.
+            <div className=" discount " ><span>OUR ONLINE STORE IS OPEN IN LEVEL 4. ORDERS WILL BEGIN SHIPPING IN LEVEL 3. NZ FREE SHIPPING.
             </span></div>
             <nav className="navbar  navbar-expand-lg " >
                 <div className="container-fluid fixed-top py-4">
                     <a href="#home" className="navbar-brand  text-uppercase font-weight-bold mr-2"><i className='bx bx-headphone bx-spin' ></i>
-                        {location.pathname === "/cart" ?
+                        {location.pathname !== "/" ?
                             <Link to="/" className="navbar-brand" ><b>AK Store</b></Link>
-                            : <a href="#home" className="navbar-brand" ><b>AK Store</b></a>
+                            : <LinkS to="home" spy={true} 
+                            smooth={true}
+                             duration={1000}
+                              className="navbar-brand" >
+                                  <b>AK Store</b>
+                                  </LinkS>
 
                         }
                     </a>
@@ -97,8 +102,12 @@ export default function Navbar({ totalItems }) {
 
                                 </>
                             )
-                            : (<li className="nav-item"  ><Link to="/" ><i className='bx bx-shopping-bag bx-sm'></i><span className="badge" style={{ 'backgroundColor': 'red' }}>{totalItems}</span></Link></li>
+                            : (
+                                <>
+                         <li className="nav-item"  ><Link to="/products" ><i class='bx bx-store bx-sm'></i></Link></li>
 
+                            <li className="nav-item"  ><Link to="/cart" ><i className='bx bx-shopping-bag bx-sm'></i><span className="badge" style={{ 'backgroundColor': 'red' }}>{totalItems}</span></Link></li>
+                           </>  
                             )
 
                         }

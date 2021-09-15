@@ -32,7 +32,7 @@ export const Lights = () => {
   }
   
   export const Arrow = () => {
-    return (
+    return  (
 <div className="scroll-btn "  >
       <i className='bx bx-up-arrow-alt bx-fade-up bx-lg' onClick={scrollToTop} ></i>
       </div>

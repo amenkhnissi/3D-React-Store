@@ -71,7 +71,7 @@ const Carousel = ({features}) => {
     return <>
     
     <SocialNav />
-    <div className=" container-fluid position-relative" id='Gallery'>
+    <div className=" mycarousel position-relative" id='Gallery'>
       <Swiper direction={'vertical'} slidesPerView={1} spaceBetween={30} mousewheel={true} pagination={{
         "clickable": true
       }} className="mySwiper">
@@ -86,7 +86,7 @@ const Carousel = ({features}) => {
     
         </Swiper> 
         
-        <div className="shop-now"><Link to="/products" className="bold">Shop now</Link></div>
+        <Link to="/products" className="bold shop-now"> Shop now</Link>
     </div> 
 
      </>

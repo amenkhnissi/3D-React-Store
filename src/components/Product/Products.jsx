@@ -5,8 +5,6 @@ import { Link } from 'react-router-dom'
 
 const Products = ( { products , addtocart  }) => {
   
-  console.log(products)
-      
     
     return  (
         <section className="Products mt-3" id="Products">
@@ -16,7 +14,7 @@ const Products = ( { products , addtocart  }) => {
                     {products.map((product,key) => product.categories.map(cat  => cat.name === "Headphones" &&
                                      <div className="col-md-3 mb-2" key={key}  >
                                      <div class="card">
-                                     <Link to={`/products/${product.id}/${product.name}`}  > 
+                                     <Link to={`/product/${product.id}/${product.name}`}  > 
    
          <img class="card-img-top" src={product.media.source} alt="" />
          </Link>
@@ -48,7 +46,7 @@ const Products = ( { products , addtocart  }) => {
                     {products.map((product,key) => product.categories.map(cat  => cat.name === "Earphones" &&
                                      <div className="col-md-3 mb-2" key={key}  >
                                      <div class="card">
-                                     <Link to={`/products/${product.id}/${product.name}`}  > 
+                                     <Link to={`/product/${product.id}/${product.name}`}  > 
    
          <img class="card-img-top" src={product.media.source} alt="" />
          </Link>
